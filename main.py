@@ -25,7 +25,7 @@ def main() -> None:
     conn = psycopg2.connect(dbname=database_name, **params)     # подключение к своей БД
     create_tables(conn)                                         # создание таблиц в БД
 
-    text = "python"
+    text = "Экономист"
     hh_api = HeadHunterAPI()
     hh_vacancies = hh_api.load_vacancies(text)                  # получение данных с HeadHunter
 
@@ -36,7 +36,7 @@ def main() -> None:
     print(bd_con.get_all_vacancies())
     print(bd_con.get_avg_salary())
     print(bd_con.get_vacancies_with_higher_salary())
-    print(bd_con.get_vacancies_with_keyword('Разработчик'))
+    print(bd_con.get_vacancies_with_keyword('Бухгалтер'))
 
 
 if __name__ == "__main__":
